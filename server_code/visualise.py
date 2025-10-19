@@ -163,6 +163,19 @@ def update_static_graphs():
         plt.savefig('static_temp_vs_steps.png')
         plt.close()
 
+
+        plt.figure(figsize=(10, 5))
+        df_sampled = df.iloc[::5, :]
+        plt.bar(df_sampled["Timestamp"], df_sampled["Calories Burned"], color='orange', width=0.5, label='Calories Burned')
+        plt.title('Calories Burned Over Time')
+        plt.xlabel('Time')
+        plt.ylabel('Calories Burned')
+        plt.xticks(rotation=45)
+        plt.grid(True)
+        plt.tight_layout()
+        plt.savefig('static_calories_over_time.png')
+        plt.close()
+
         
         print("Static graphs saved as PNG files.")
 
